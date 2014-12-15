@@ -22,17 +22,21 @@ Or install it yourself as:
 
 Simply call `decorate` on an object or collection in a controller or view.
 
-    @user = decorate user
+```ruby
+@user = decorate user
+```
 
-Then add a presenter with the corresponding name that inherrits from `Simpre::Presenter`
+Then add a presenter with the corresponding name that inherits from `Simpre::Presenter`
 
-    class UserPresenter < Simpre::Presenter
+```ruby
+class UserPresenter < Simpre::Presenter
 
-      def full_name
-        "#{first_name} #{last_name}"
-      end
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 
-    end
+end
+```
 
 Thats it, you can treat the decorated `@user` as if it were the original object but also has
 the presenter methods.
