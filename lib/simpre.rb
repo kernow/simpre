@@ -1,6 +1,7 @@
 require 'simpre/helper'
 require 'simpre/presenter'
 require 'simpre/version'
+require 'simpre/railtie' if defined?(Rails) && Rails::VERSION::MAJOR >= 3
 
 module Simpre
 end
