@@ -8,7 +8,7 @@ module Simpre
         item = item_or_collection
         decorator = "#{item.class}Presenter".constantize
         return item if decorator === item
-        decorator.new(item)
+        decorator.new(item, self)
       end
     end
 
