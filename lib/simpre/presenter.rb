@@ -2,6 +2,8 @@ require 'delegate'
 
 module Simpre
   class Presenter < SimpleDelegator
+    include Simpre::Helper
+
     def initialize(model, view)
       @model = model
       @view = view
