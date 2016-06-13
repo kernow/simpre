@@ -6,8 +6,7 @@ module Simpre
       else
         item = item_or_collection
         decorator = "#{item.class}Presenter".constantize
-        return item if decorator === item
-        decorator.new(item, self)
+        return item if item.instance_of?(decorator)
         decorator.new(item, current_view_context)
       end
     end
