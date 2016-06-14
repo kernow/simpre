@@ -18,7 +18,11 @@ module Simpre
       # if calling `decorate` from another presenter return the existing
       # view_context
       return h if is_a?(Presenter)
-      is_a?(ApplicationController) ? view_context : self
+      if defined?(ApplicationController) && is_a?(ApplicationController)
+        view_context
+      else
+        self
+      end
     end
   end
 end
