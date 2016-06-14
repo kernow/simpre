@@ -1,4 +1,5 @@
 module Simpre
+  # A helper method for decorating objects
   module Helper
     def decorate(item_or_collection)
       if item_or_collection.respond_to?(:map)
