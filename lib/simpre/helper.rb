@@ -15,6 +15,9 @@ module Simpre
     private
 
     def current_view_context
+      # if calling `decorate` from another presenter return the existing
+      # view_context
+      return h if is_a?(Presenter)
       is_a?(ApplicationController) ? view_context : self
     end
   end
