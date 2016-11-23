@@ -6,8 +6,8 @@ module Simpre
         item_or_collection.map { |item| decorate(item) }
       else
         item = item_or_collection
+        return item if item.is_a?(Presenter)
         presenter = "#{item.class}Presenter".constantize
-        return item if item.instance_of?(presenter)
         presenter.new(item, current_view_context)
       end
     end
